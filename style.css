@@ -1,0 +1,651 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color:powderblue;
+    color: #333;
+    max-width: 100%;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    width:100%;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+section {
+    
+    padding: 10px 10px; /* Add padding for spacing */
+    border: 1px solid #5e5b5b; /* Optional: add borders for visibility */
+    margin: 20px 0; /* Add margin between sections */
+    background-color: white;
+}
+
+h2 {
+    margin-top: 2px; /* Remove top margin for section headers */
+}
+
+section.active {
+    display: block; /* Show the active section */
+}
+
+/* Main Content */
+main {
+    padding: 0;
+}
+
+article {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+#home {
+    background-color: rgb(243, 233, 238);
+
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+   
+}
+
+.home-text {
+    flex: 1;
+}
+
+/* .home-image img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+} */
+
+.home-image img {
+    width: 300px; /* Ensure the image is a square */
+    height: 300px; /* Set the same height */
+    border-radius: 70%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area */
+    border: 2px solid #47494b; /* Optional: Adds a border to the image */
+}
+
+/* Button */
+.cta-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Responsive Media Queries */
+
+/* For small devices (phones) */
+/* @media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        font-size: 1.1em;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-image img {
+        max-width: 80%;
+        margin: 20px auto;
+    }
+
+    .cta-button {
+        width: 100%;
+        margin: 20px auto;
+    }
+} */
+
+@media (max-width: 600px) {
+    .home-image img {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+    }
+}
+/* For medium devices (tablets) */
+/* @media (min-width: 601px) and (max-width: 1024px) {
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    .home-content {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .home-image img {
+        max-width: 250px;
+    }
+} */
+
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .home-image img {
+        width: 250px;
+        height: 250px;
+        background-color: rgb(93, 200, 219);
+    }
+}
+
+/* For large devices (desktops) */
+@media (min-width: 1025px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+    .animated-name {
+        display: inline-block; /* Allows animation to be applied */
+        opacity: 0; /* Start with invisible */
+        transform: translateY(-20px); /* Start slightly above */
+        animation: fadeInUp 1s forwards; /* Animation properties */
+    }
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    
+        .carousel-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('/Images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg');
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.content-overlay {
+    background: rgba(64, 61, 97, 0.6); /* Semi-transparent black */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;;
+    height :20vh;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color 0.3s;
+}
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(14, 13, 13, 0.8);
+}
+}
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .prev, .next {
+        font-size: 1.5rem;
+    }
+    .carousel-button:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+
+.carousel {
+position: relative;
+width: 100%;
+height: 50vh; /* Full screen height */
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+
+.carousel-slide {
+position: absolute;
+width: 100%;
+height: 80vh;
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 1s ease;
+background-size: cover;
+background-position: center;
+}
+
+.carousel-slide.active {
+opacity: 1;
+}
+
+.content-overlay {
+background: rgba(64, 61, 97, 0.6); /* Semi-transparent black */
+color: white;
+padding: 20px;
+text-align: center;
+max-width: 800px;;
+height :20vh;
+}
+.prev, .next {
+position: absolute;
+top: 50%;
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+font-size: 2rem;
+padding: 10px;
+cursor: pointer;
+transform: translateY(-50%);
+transition: background-color 0.3s;
+}
+.prev {
+left: 20px;
+}
+
+.next {
+right: 20px;
+}
+
+.prev:hover, .next:hover {
+background-color: rgba(14, 13, 13, 0.8);
+}
+
+}
+/* Base styles for the projects section */
+.projects-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.company-card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    flex-basis: 30%; /* Three items per row on large screens */
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.company-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.company-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.company-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Responsive styles */
+
+/* Two items per row on medium screens (tablets) */
+@media screen and (max-width: 900px) {
+    .company-card {
+        flex-basis: 45%; /* Two items per row */
+    }
+}
+
+/* One item per row on small screens (mobile) */
+@media screen and (max-width: 600px) {
+    .projects-section {
+        padding: 10px;
+    }
+    
+    .company-card {
+        flex-basis: 100%; /* One item per row */
+        margin: 10px 0;
+    }
+
+    .company-card img {
+        max-width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
+#contact {
+    background-image: url('/Images/ian-schneider-TamMbr4okv4-unsplash.jpg');
+}
+.contact-section {
+    background: url('/path-to-your-background-image.jpg') no-repeat center center/cover;
+    padding: 60px 0;
+    text-align: center;
+}
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.contact-heading h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Contact information section */
+.contact-info {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-info .social-icons {
+    margin-bottom: 10px;
+}
+
+.contact-info .social-icons a {
+    margin: 0 0;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 480px) {
+    .contact-heading h2 {
+        font-size: 24px;
+    }
+
+    .contact-container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .contact-form textarea {
+        height: 100px;
+    }
+
+    .contact-info .social-icons a {
+        margin: 0 5px;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .contact-heading h2 {
+        font-size: 28px;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .contact-info {
+        font-size: 12px;
+    }
+}
+#stickyDownload {
+    position: relative; /* Change to relative positioning */
+    width: 20vh; /* Set width as per your preference */
+    margin: 20px auto; /* Center the button and add spacing */
+    background-color: #4CAF50; /* Customize your color */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 999; /* Ensure it stays on top of other elements */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+@media (max-width: 600px) {
+    #stickyDownload {
+        font-size: 14px; /* Smaller font size for smaller screens */
+        padding: 12px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 400px) {
+    #stickyDownload {
+        font-size: 12px; /* Even smaller font size for very small screens */
+        padding: 10px; /* Further adjust padding */
+    }
+}
+
+#stickyDownload:hover {
+    background-color: #45a049; /* Change the background color on hover */
+}
+
+
+footer p {
+    margin-bottom: 1rem;  /* Space between copyright text and social links */
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between icons */
+}
+.social-icon {
+    width: 24px;  /* Adjust size as needed */
+    height: 24px;
+    transition: transform 0.3s ease; /* Add some hover effects */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+  .menu-icon .menu-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #333;
+  }
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block; /* Show hamburger icon on smaller screens */
+    }
+  
+    ul.nav-links {
+      display: none; /* Hide the horizontal menu */
+      flex-direction: column; /* Stacks vertically on small screens */
+      position: absolute;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+  
+    ul.nav-links.active {
+      display: flex; /* Show the menu when the hamburger is clicked */
+    }
+  }
+  
+
+
